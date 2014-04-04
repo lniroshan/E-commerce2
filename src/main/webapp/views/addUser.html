@@ -1,0 +1,23 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+ <link rel="stylesheet" href="css/style.css">
+<title>Nouveaux Client</title>
+</head>
+<body>
+<h1> nouveau Client</h1>
+
+<form action="" method="post" id="ajouterClient">
+
+Nom  : <input  type="text" ng-model=client.nom name="nom" /> <br>
+Prenom : <input type="text" ng-model=client.prenom   name="prenom"/> <br>
+adresse : <input type="text" ng-model=client.adresse  name="adresse"/> <br>
+date Naissance : <input type="text" ng-model=client.dateDeNaissance  name="dateDeNaissance"/>  <br>
+mail : <input type="text" ng-model=client.mail  name="mail"/>  <br>
+ mot de passe :<input type="text" ng-model=client.motDePasse  name="motDePasse"/>  <br>
+<input type="submit" value="enregistrer" ng-click="enregistrerClientCommande(client)">
+</form>
+</body>
+</html>

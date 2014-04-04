@@ -1,0 +1,43 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>administrateur</title>
+</head>
+<tbody>
+
+
+
+<!--       <a href="login.jsp">connection ou enregistrement </a> -->
+<table class="table table-bordered"  >   
+     <tr >
+        <td class="tdRight"  >
+            <a href=""  ng-click="goPanier()"  ng-disabled="cart.getTotalCount() < 1">
+                <i class="icon-shopping-cart"  /> commander
+               <td> nombre articles : {{cart.getTotalCount()}}</td>  <td>total :{{cart.getTotalPrice() | currency}}</td>
+            </a>
+        </td>
+    </tr>
+
+      <tr ng-repeat="article in articles | orderBy:'nom' | filter:search"" id="{{article.nom}}"> 
+    
+       <td>
+        Nom : {{article.name}}
+      </td>
+      <td>
+       categorie :  {{article.categorie}} 
+       </td>
+       <td>
+       prix : {{article.price}} 
+       </td>
+       <td class="tdCenter">
+            <a href="" ng-click="cart.addItem(article.name,article.name,  article.price, 1)">
+               ajouter au panier 
+            </a>
+        </td>
+       </tr>
+       
+        </table>    
+</tbody>
+</html>

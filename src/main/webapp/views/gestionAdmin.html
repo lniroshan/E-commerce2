@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="US-ASCII">
+<title>Insert title here</title>
+
+<table class="table">
+
+ 				 <button 
+                    class="btn btn-danger" 
+                    ng-click="PageAjouterArticle()" 
+                   	 >
+                    ajouter article
+                </button>
+                   <button 
+                    class="btn btn-danger" 
+                    ng-click="commander(cart)" 
+                    >
+                   supprimer article
+                </button>
+   <caption>toutes les commandes</caption>
+   <thead>
+      <tr>
+         <th>client</th>
+         <th>Date</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr ng-repeat="commande in commandes">
+         <td>{{commande.client.email}}</td>
+         <td>{{commande.date}}</td>
+      </tr>
+   </tbody>
+</table>

@@ -1,0 +1,15 @@
+
+<body>
+<h1> modification de votre compte</h1>
+
+<form action="" method="post" id="modifierClient">
+
+Nom  : <input  type="text" ng-model=client.nom name="nom" disabled/> <br>
+Prenom : <input type="text" ng-model=client.prenom   value = {{client.prenom }}  name="prenom"/> <br>
+adresse : <input type="text" ng-model=client.adresse  value ={{client.adresse}}  name="adresse"/> <br>
+date Naissance : <input type="text" ng-model=client.dateDeNaissance value={{client.dateDeNaissance}} name="dateDeNaissance"/>  <br>
+mail : <input type="text" ng-model=client.mail value={{client.mail}}  name="mail"/>  <br>
+ mot de passe :<input type="text" ng-model=client.motDePasse value={{client.motDePasse}}  name="motDePasse"/>  <br>
+<input type="submit" value="enregistrer" ng-click="modifierClientCommande(client)">
+</form>
+</body>
