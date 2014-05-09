@@ -78,7 +78,7 @@ public class HomeController {
    }
     
    // ajout d'un nouveau article
-   @RequestMapping(value="/ajouterArticle", method= RequestMethod.POST, consumes = "application/json")
+   @RequestMapping(value="/ajoutArticle", method= RequestMethod.POST, consumes = "application/json")
 	  public ResponseEntity<Object> ajouterArticle(@RequestBody final Article article) {
 	   GestionArticle gestionArticle = new GestionArticle();
 	   gestionArticle.add(article);
@@ -106,10 +106,18 @@ public class HomeController {
    @RequestMapping(value="/getAllCommande", method= RequestMethod.GET, produces = "application/json")
 	  public @ResponseBody List<Commande> recuperationCommande() {
 GestionCommande gestionCommande  = new GestionCommande();
-System.out.println("----------------------------------------------------------");
 				return 	gestionCommande.getAllCommande();
    }
    
+   
+   // suppression d'une Commande 
+   @RequestMapping(value="/supprimerCommande", method= RequestMethod.POST, consumes = "application/json")
+	  public ResponseEntity<Object> supprimerCommande(@RequestBody final Commande commande) {
+	   
+	   GestionCommande gestionCommande = new GestionCommande();
+	   gestionCommande.remove(commande);
+	   return null;
+   }
    
    
    

@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>administrateur</title>
+ <link rel="stylesheet" href="css/style.css">
 </head>
 <tbody>
 
@@ -20,8 +20,9 @@
             </a>
         </td>
     </tr>
-
-      <tr ng-repeat="article in articles | orderBy:'nom' | filter:search"" id="{{article.nom}}"> 
+    </br>
+  <input type="text" ng-model="search" class="form-control" placeholder="affiner la recherche">
+      <tr ng-repeat="article in articles | orderBy:'price' | filter:search"" id="{{article.nom}}"> 
     
        <td>
         Nom : {{article.name}}
@@ -40,5 +41,6 @@
        </tr>
        
         </table>    
+        
 </tbody>
 </html>

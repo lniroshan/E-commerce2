@@ -9,18 +9,25 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Commande {
 
 	@Id
-	private int num;
+	private String num;
 	private Client client;
 	private Date date;
-	public Client getClient() {
-		return client;
+	
+	public Commande(){
+		
 	}
 	
 	public Commande(Client client) {
 		super();
 		this.client = client;
 		this.date = new Date();
+		
 	}
+	
+	public Client getClient() {
+		return client;
+	}
+	
 
 	public void setClient(Client client) {
 		this.client = client;
@@ -32,11 +39,13 @@ public class Commande {
 		this.date = date;
 	}
 
-	public int getNum() {
+
+
+	public String getNum() {
 		return num;
 	}
 
-	public void setNum(int num) {
+	public void setNum(String num) {
 		this.num = num;
 	}
 

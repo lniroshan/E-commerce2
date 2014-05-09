@@ -24,5 +24,9 @@ public class GestionCommande {
 			System.out.println(daoCommande.allCommande());
 		return	daoCommande.allCommande();
 	}
+
+	public void remove(Commande commande) {
+		daoCommande.remove(commande);
+	}
 	
 }

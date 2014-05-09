@@ -45,9 +45,8 @@ function storeListController($scope,$rootScope, $location,$http, Article, Panier
     
    $scope.authentificationClientPreCommander= function(client){
 	   if((client.mail.localeCompare("admin")==0) && (client.motDePasse.localeCompare("admin")==0) ){
-		   alert("toto");
-		   admin();
-		   
+				$scope.Commandes = $http.get("rest/getAllCommande");
+				 $location.path("/store/gestionAdmin");
 	   }
 	   else {
 	   $http.post("rest/authentification",client).success(function(reponse){
@@ -123,10 +122,25 @@ function storeListController($scope,$rootScope, $location,$http, Article, Panier
 	   	
 	   $http.post("rest/ajoutArticle",article);
 	   };
-   function admin(){
-	   $scope.Commandes = $http.get("rest/getAllCommande");
-	   $location.path("/store/gestionAdmin");
-   }
+   
+	   
+	   $scope.PageSupprimerArticle = function(){
+			$location.path("/store/PageSupprimerArticle");
+			   $scope.commandes = $http.get("rest/getAllCommande");
+
+	   };  
+	   $scope.commandes = $http.get("rest/getAllCommande");
+
+	   
+	   $scope.supprimerArticle = function(article){
+		   $http.post("rest/supprimerArticle",article); 
+		   $scope.articles.splice(article, 1);
+	   };
+   
+	   $scope.supprimerCommande = function(commande){
+		   $http.post("rest/supprimerCommande",commande); 
+		   $scope.commandes.data.splice(commande, 1);
+	   };
    
 }
 

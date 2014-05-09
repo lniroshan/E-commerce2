@@ -4,20 +4,20 @@
 <meta charset="US-ASCII">
 <title>Insert title here</title>
 
-<table class="table">
-
- 				 <button 
-                    class="btn btn-danger" 
+<button 
+       class="btn btn-danger" 
                     ng-click="PageAjouterArticle()" 
                    	 >
                     ajouter article
                 </button>
+                   
                    <button 
                     class="btn btn-danger" 
-                    ng-click="commander(cart)" 
+                    ng-click="PageSupprimerArticle()" 
                     >
                    supprimer article
                 </button>
+<table class="table">
    <caption>toutes les commandes</caption>
    <thead>
       <tr>
@@ -25,10 +25,15 @@
          <th>Date</th>
       </tr>
    </thead>
+   {{commandes.data}} </br>
+   -------------------------
+   {{commandes}}
    <tbody>
-      <tr ng-repeat="commande in commandes">
-         <td>{{commande.client.email}}</td>
-         <td>{{commande.date}}</td>
+         <tr ng-repeat="commande in commandes.data">
+         <td>{{commande.client.mail}}</td>
+         <td>{{commande.date | date:'medium'}}</td>
+         <td>{{commande.num}}</td>
+         <td>  <button  class="btn btn-danger" ng-click="supprimerCommande(commande)" > supprimer commande </button> </td>
       </tr>
    </tbody>
 </table>

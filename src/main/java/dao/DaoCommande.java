@@ -29,6 +29,12 @@ public class DaoCommande {
 		
 		 return mongoOperation.findAll(Commande.class);
 	}
+
+
+	public void remove(Commande commande) {
+		mongoOperation.remove(commande);
+		
+	}
 	
 	
 }
