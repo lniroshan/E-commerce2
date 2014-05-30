@@ -2,13 +2,14 @@
 <html>
 <head>
 <meta charset="US-ASCII">
+ <link rel="stylesheet" href="css/style.css">
 <title>ajouter article </title>
 </head>
 <body>
 <form action="" method="post" id="ajouterArticle">
-categorie  : <input  type="text" ng-model=article.sku name="sku" /> <br>
-nom : <input type="text" ng-model=article.name    name="name"/> <br>
-prix : <input type="number" ng-model=article.price    name="prix"/> <br>
+categorie  : <input  type="text" ng-model=article.sku  name="sku"   /> </br>
+nom 	   : <input type="text" ng-model=article.name    name="name" /> </br>
+prix       : <input type="text" ng-model=article.price    name="prix"    /> </br>
 <input type="submit" value="ajouter" ng-click="ajouterArticle(article)">
 </form>
 </body>

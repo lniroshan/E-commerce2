@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="US-ASCII">
-<title>Insert title here</title>
-
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+ <link rel="stylesheet" href="css/style.css">
+<title>page administrateur</title>
+</head>
 <button 
        class="btn btn-danger" 
                     ng-click="PageAjouterArticle()" 
@@ -17,23 +18,25 @@
                     >
                    supprimer article
                 </button>
+        
 <table class="table">
    <caption>toutes les commandes</caption>
+   	
    <thead>
       <tr>
          <th>client</th>
          <th>Date</th>
+          <th>numero commande</th>
       </tr>
-   </thead>
-   {{commandes.data}} </br>
-   -------------------------
-   {{commandes}}
+   </thead>   
    <tbody>
-         <tr ng-repeat="commande in commandes.data">
+         <tr ng-repeat="commande in commandes">
          <td>{{commande.client.mail}}</td>
          <td>{{commande.date | date:'medium'}}</td>
          <td>{{commande.num}}</td>
-         <td>  <button  class="btn btn-danger" ng-click="supprimerCommande(commande)" > supprimer commande </button> </td>
+         <td>  <button  class="btn btn-danger" ng-click="supprimerCommande(commande)" > supprimer commande </button>
+          </td>
       </tr>
+      
    </tbody>
 </table>

@@ -16,5 +16,9 @@ angular.module('storeService', ['ngResource']).
             return {
             	cart: mycart 
             }
-        });
+        }).factory('Commandes', function ($resource) {
+            return $resource('rest/getAllCommande', {}, {
+                'query': { method: 'GET', isArray: true}
+            });
+        });;
         

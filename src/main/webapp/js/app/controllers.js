@@ -1,6 +1,6 @@
 'use strict';
 
-function storeListController($scope,$rootScope, $location,$http, Article, Panier ,PanierVirtuel) {
+function storeListController($scope,$rootScope, $location,$http, Article, Panier ,PanierVirtuel,Commandes) {
 	$scope.cart  = PanierVirtuel.cart;
 	$scope.articles = Article.query();
 
@@ -129,7 +129,7 @@ function storeListController($scope,$rootScope, $location,$http, Article, Panier
 			   $scope.commandes = $http.get("rest/getAllCommande");
 
 	   };  
-	   $scope.commandes = $http.get("rest/getAllCommande");
+	   $scope.commandes = Commandes.query();
 
 	   
 	   $scope.supprimerArticle = function(article){
@@ -139,7 +139,7 @@ function storeListController($scope,$rootScope, $location,$http, Article, Panier
    
 	   $scope.supprimerCommande = function(commande){
 		   $http.post("rest/supprimerCommande",commande); 
-		   $scope.commandes.data.splice(commande, 1);
+		   $scope.commandes.splice(commande, 1);
 	   };
    
 }

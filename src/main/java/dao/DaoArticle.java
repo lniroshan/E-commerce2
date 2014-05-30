@@ -13,10 +13,10 @@ public class DaoArticle {
 
 	private MongoOperations mongoOperation ;  
 	public DaoArticle (){
-		ApplicationContext ctx = 
-				new GenericXmlApplicationContext("SpringMongoConfig.xml");
+		ApplicationContext ctx = new GenericXmlApplicationContext("SpringMongoConfig.xml");
 	 this.mongoOperation = 
                 (MongoOperations) ctx.getBean("mongoTemplate");
+	 
 	}
 	
 

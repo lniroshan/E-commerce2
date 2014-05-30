@@ -1,5 +1,4 @@
 import static org.junit.Assert.*;
-import junit.framework.Assert;
 import model.Article;
 import model.Client;
 import model.Panier;

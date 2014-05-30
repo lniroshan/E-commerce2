@@ -8,6 +8,8 @@ import model.Client;
 import model.Commande;
 import model.Panier;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -23,20 +25,13 @@ import Service.GestionUtilisateur;
 @Controller
 public class HomeController {
     
+	private static final Logger logger = LoggerFactory.getLogger("ngotioi");
+	
     @RequestMapping(value = "/store", method = RequestMethod.GET, produces = "application/json")
     public @ResponseBody
     List<Article> list() {
-        List<Article> articles = new ArrayList<Article>();
-        Article a1 = new Article("meuble", "lavabo", 13, 1);
-        Article a2 = new Article("toillette", "armoire", 14, 1);
-        Article a3 = new Article("cuisine", "salle", 16, 1);
-        articles.add(a1);
-        articles.add(a2);
-        articles.add(a3);
-        
         GestionArticle gestionArticle = new GestionArticle();
         return    gestionArticle.getStore();
-//        return articles;
     }
     
     
@@ -46,6 +41,7 @@ public class HomeController {
    @RequestMapping(value="/addClient", method= RequestMethod.POST, consumes = "application/json")
 	  public ResponseEntity<Object> paiementNouveauClient(@RequestBody final Client client) {
 	   GestionUtilisateur gestionUtilisateur = new GestionUtilisateur();
+	   logger.debug("toto");	   
 	   gestionUtilisateur.addClient(client);
 	   return null;
    }
@@ -66,10 +62,12 @@ public class HomeController {
 	    return null;
    }
    
+   
+   // authentification du client
    @RequestMapping(value="/authentification", method= RequestMethod.POST, consumes = "application/json")
 	  public @ResponseBody ResponseEntity<Client> authentification(@RequestBody final Client client) {
 	   GestionUtilisateur gestionUtilisateur = new GestionUtilisateur();
-	   Client findClient = gestionUtilisateur.authentification(client.getMail(),client.getMotDePasse());
+	   Client findClient = gestionUtilisateur.authentification(client.getMail().trim(),client.getMotDePasse().trim());
 	   if (findClient == null){
 		   return new ResponseEntity<Client>(HttpStatus.BAD_REQUEST);
 	   }

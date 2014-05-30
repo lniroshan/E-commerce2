@@ -38,7 +38,7 @@ public class DaoUtilisateur {
 	}
 
 	public Client findUtilisateur(String nom, String mdp) {
-		Query searchUserQuery = new Query(Criteria.where("mail").is(nom).and("motDePasse").is(mdp));
+		Query searchUserQuery = new Query(Criteria.where("mail").is(mdp).and("motDePasse").is(nom));
 		System.out.println(searchUserQuery.toString());
 		Client FindUser = mongoOperation.findOne(searchUserQuery, Client.class);
 		return 	FindUser;
