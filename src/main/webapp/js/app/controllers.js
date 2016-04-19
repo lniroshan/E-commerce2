@@ -43,6 +43,12 @@ function storeListController($scope,$rootScope, $location,$http, Article, Panier
     	$scope.connected = true;
     };
     
+    $scope.DetailCommande = function(commande){
+    	$rootScope.commande = commande;
+    	$location.path("/store/DetailsCommande");
+    	$scope.connected = true;
+    }
+    
    $scope.authentificationClientPreCommander= function(client){
 	   if((client.mail.localeCompare("admin")==0) && (client.motDePasse.localeCompare("admin")==0) ){
 				$scope.Commandes = $http.get("rest/getAllCommande");
@@ -141,7 +147,14 @@ function storeListController($scope,$rootScope, $location,$http, Article, Panier
 		   $http.post("rest/supprimerCommande",commande); 
 		   $scope.commandes.splice(commande, 1);
 	   };
+   $scope.rechercherVille = function(){
+	   
+   }
    
+   
+   $scope.retour = function(){
+	   $location.path("/store/gestionAdmin");
+   }
 }
 
 

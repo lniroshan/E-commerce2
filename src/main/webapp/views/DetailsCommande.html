@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+ <link rel="stylesheet" href="css/style.css">
+<title>page administrateur</title>
+</head>
+
+<table class="table">
+   <caption>toutes les articles de la commande <B>{{commande.num}}</B> pour le client <B>{{commande.client.mail}}</B></caption>
+   	
+   <thead>
+      <tr>
+         <th>Nom </th>
+         <th>prix</th>
+          <th>Quantite</th>
+      </tr>
+   </thead>   
+   <tbody>
+         <tr ng-repeat="item in commande.client.panier.items">
+         <td>{{item.sku}}</td>
+         <td>{{item.price}}</td>
+         <td>{{item.quantity}}</td>
+      </tr>
+   </tbody>
+</table>
+
+ <td>  <button  class="btn btn-danger" ng-click="retour()" > Retour </button>
+          </td>

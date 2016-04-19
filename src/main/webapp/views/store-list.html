@@ -2,21 +2,21 @@
  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <link rel="stylesheet" href="css/style.css">
 </head>
 <tbody>
 
 
 
-      <a ng-click="connection()">connection ou enregistrement </a>
+      <a ng-click="connection()" ng-if="!connected"  >connection ou enregistrement </a>
       <a ng-click="modifClient()" ng-if="connected" >{{client.prenom}}</a>
 <table class="table table-bordered"  >   
      <tr >
         <td class="tdRight"  >
             <a href=""  ng-click="goPanier()"  ng-disabled="cart.getTotalCount() < 1">
                 <i class="icon-shopping-cart"  /> commander
-               <td> nombre articles : {{cart.getTotalCount()}}</td>  <td>total :{{cart.getTotalPrice()}}€</td>
+               <td> nombre articles : {{cart.getTotalCount()}}</td>  <td>total :{{cart.getTotalPrice()}} €</td>
             </a>
         </td>
     </tr>

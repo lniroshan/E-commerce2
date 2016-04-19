@@ -2,10 +2,15 @@ package Service;
 
 import java.util.List;
 
-import dao.DaoArticle;
 import model.Article;
 
+import org.springframework.stereotype.Service;
+
+import dao.DaoArticle;
+
+@Service
 public class GestionArticle {
+
 
 	DaoArticle daoArticle = new DaoArticle();
 	

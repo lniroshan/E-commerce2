@@ -4,8 +4,11 @@ import java.util.List;
 
 import model.Client;
 import model.Commande;
-import dao.DaoCommande;
 
+import org.springframework.stereotype.Service;
+
+import dao.DaoCommande;
+@Service
 public class GestionCommande {
 
 	

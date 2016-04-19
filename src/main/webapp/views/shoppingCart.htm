@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <link rel="stylesheet" href="css/style.css">
 
 <div class="container-fluid">
@@ -25,7 +25,7 @@
 
                 <!-- cart items -->
                 <tr ng-repeat="item in cart.items | orderBy:'name'">
-                    <td>{{item.name}}</td>
+                    <td>{{item.sku}}</td>
                     <td class="tdCenter">
                       <div class="input-append">
                         <!-- use type=tel instead of  to prevent spinners -->

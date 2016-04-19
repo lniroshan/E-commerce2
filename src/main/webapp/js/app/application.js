@@ -17,5 +17,7 @@ $routeProvider.
     when('/store/PageAjouterArticle', {templateUrl:'views/addArticle.html', controller:storeListController}).
     when('/store/PageSupprimerArticle', {templateUrl:'views/deleteArticle.html', controller:storeListController}).
     when('/store/supprimerArticle', {templateUrl:'views/deleteArticle.html', controller:storeListController}).
+    when('/store/DetailsCommande', {templateUrl:'views/DetailsCommande.html', controller:storeListController}).
+    when('/maps', {templateUrl:'views/maps.html', controller:storeListController}).
     otherwise({redirectTo:'/store/list'});
 }]);

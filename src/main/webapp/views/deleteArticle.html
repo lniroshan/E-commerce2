@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<meta charset="US-ASCII">
+ <link rel="stylesheet" href="css/style.css">
+ 
+<body>
+
+<table class="table table-bordered"  >   
+      <tr ng-repeat="article in articles | orderBy:'nom' | filter:search" id="{{article.nom}}"> 
+    
+       <td>
+        Nom : {{article.name}}
+      </td>
+      <td>
+       categorie :  {{article.sku}} 
+       </td>
+       <td>
+       prix : {{article.price}} 
+       </td>
+       <td class="tdCenter">
+            <a href="" ng-click="supprimerArticle(article)">
+               supprimer article 
+            </a>
+        </td>
+       </tr>
+       
+        </table>  
+
+</body>
+</html>

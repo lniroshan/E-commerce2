@@ -1,11 +1,14 @@
 package Service;
 
-import java.util.Date;
+import org.springframework.stereotype.Service;
 
 import model.Client;
 import model.Panier;
-import dao.DaoUtilisateur;
 
+
+
+import dao.DaoUtilisateur;
+@Service
 public class GestionUtilisateur {
 
 	DaoUtilisateur daoUtilisateur = new DaoUtilisateur();

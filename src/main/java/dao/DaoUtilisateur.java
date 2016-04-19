@@ -1,14 +1,14 @@
-package dao;
+	package dao;
 
 import java.util.List;
+
+import model.Client;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
-
-import model.Client;
 
 public class DaoUtilisateur {
 

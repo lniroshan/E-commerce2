@@ -6,21 +6,11 @@ function shoppingCart(clientName) {
     this.clearCart = false;
     this.items = [];
     this.totalprice=0;
-    // load items from local storage when initializing
-//    this.loadItems();
-
-    // save items to local storage when unloading
     var self = this;
-//    $(window).unload(function () {
-//        if (self.clearCart) {
-//            self.clearItems();
-//        }
-//        self.saveItems();
-//        self.clearCart = false;
-//    });
+
 }
 
-// load items from local storage
+
 shoppingCart.prototype.loadItems = function () {
     var items = localStorage != null ? localStorage[this.clientName + "_items"] : null;
     if (items != null && JSON != null) {
@@ -35,7 +25,7 @@ shoppingCart.prototype.loadItems = function () {
             }
         }
         catch (err) {
-            // ignore errors while loading...
+          
         }
     }
 }
